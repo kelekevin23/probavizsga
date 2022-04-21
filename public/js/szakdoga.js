@@ -3,11 +3,6 @@ class Szakdoga {
         this.adat = adat;
         this.index = index;
         this.megjelenit(this.adat, this.index);
-
-        this.modosit =
-            "<td><button class=modositashoz id=" +
-            index +
-            " >Módosít</button></td>>";
     }
     megjelenit(obj, index) {
         let kiir = "";
@@ -22,7 +17,10 @@ class Szakdoga {
             "</a></td>";
         kiir +=
             "<td><a href=" + obj.oldallink + ">" + obj.oldallink + "</a></td>";
-        kiir += this.modosit;
+        kiir +=
+            "<td><button class=modositashoz id=" +
+            index +
+            " >Módosít</button></td>>";
         kiir +=
             "<td><form><button class=torol id=" +
             index +
@@ -41,6 +39,7 @@ class Szakdoga {
         });
 
         $(".modositashoz").on("click", () => {
+            $("#modosit").prop("disabled", false);
             $("#szakdoga_nev").val(obj.szakdoga_nev);
             $("#tagokneve").val(obj.tagokneve);
             $("#oldallink").val(obj.oldallink);
