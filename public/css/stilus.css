@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+main{
+    width: 90%;
+    max-width: 1200px;
+    margin:auto;
+    text-align: center;
+}
+
+.tablazat{
+    text-align: left;
+}
+.tablazat th{
+    background-color: black;
+    color: white;
+}
+.tablazat tr:nth-child(even) {
+    background-color: lightblue;
+}
+.ujadat{
+    padding-top: 30px;
+    width: 70%;
+    margin: auto;
+}
+.tartalom{
+    width: 100%;
+}
+.sor{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .tablazat{
+        font-size: 10px;
+    }
+    .tartalom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .sor{
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+  }
